@@ -1,10 +1,11 @@
 # Add  code here!
 def prime?(n)
-  unless n.is_a? Integer
-  puts "That's not an integer."
-  if n%2 !=0 && n!=2
-    puts "#{n} is prime!"
-  else
-    puts "#{n} is not prime."
+  if n <= 1
+    return false
+  elsif n <= 3
+    return true
+  else (2..n/2).none? do |x|
+    n % x == 0
+  end
   end
 end
